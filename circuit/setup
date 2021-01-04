@@ -1,1 +1,25 @@
+cirucit use two 8bit-SN74HC595N shift registers, one 788BS 8x8 LED matrix and one joystick.
 
+connect the two shift registers in series as per the picture, to create a 16-bit shift register.
+------------------------------------------------------------------------------------------
+connect the outputs of shift register-1 as per below:
+output-0: controls column 1 of LED matrix
+output-1: controls column 2 of LED matrix
+output-2: controls column 3 of LED matrix
+output-3: controls column 4 of LED matrix
+output-4: controls column 5 of LED matrix
+output-5: controls column 6 of LED matrix
+output-6: controls column 7 of LED matrix
+output-7: controls column 8 of LED matrix
+------------------------------------------------------------------------------------------
+
+connect the outputs of shift register-2 as per below:
+output-0: controls row   1 of LED matrix
+output-1: controls row   2 of LED matrix
+output-2: controls row   3 of LED matrix
+output-3: controls row   4 of LED matrix
+output-4: controls row   5 of LED matrix
+output-5: controls row   6 of LED matrix
+output-6: controls row   7 of LED matrix
+output-7: controls row   8 of LED matrix
+------------------------------------------------------------------------------------------
