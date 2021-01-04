@@ -5,14 +5,13 @@ int RP=7, CP=7,nn=0,xx,yy, rate;
 
 
 byte long left_right[8][8]={0x7F80,0xBF80,0xDF80,0xEF80,0xF780,0xFB80,0xFD80,0xFE80,0x7F40,0xBF40,0xDF40,0xEF40,0xF740,0xFB40,0xFD40,0xFE40,0x7F20,0xBF20,0xDF20,0xEF20,0xF720,0xFB20,0xFD20,0xFE20,0x7F10,0xBF10,0xDF10,0xEF10,0xF710,0xFB10,0xFD10,0xFE10,0x7F08,0xBF08,0xDF08,0xEF08,0xF708,0xFB08,0xFD08,0xFE08,0x7F04,0xBF04,0xDF04,0xEF04,0xF704,0xFB04,0xFD04,0xFE04,0x7F02,0xBF02,0xDF02,0xEF02,0xF702,0xFB02,0xFD02,0xFE02,0x7F01,0xBF01,0xDF01,0xEF01,0xF701,0xFB01,0xFD01,0xFE01}; 
-void down();
-void up();
-void left();
-void right();
-void button();
-void Position();
-void sizee();
-void win();
+void button();// to read the joystick inputs
+void Position();// to calculate position of the pixels of the snake
+void sizee();// to change the refresh rate of the matrix as the size of the snake changes 
+void win();// shows some led pattern when the player wins
+void Display_1();// tp display position of the food for the snake
+void Display(int rr,int cc);// to display position of the snake
+void point();// calculates next position of the food of the snake using random()
 void setup()
 {Serial.begin(9600);
  pinMode(2,OUTPUT);
@@ -59,7 +58,6 @@ void loop()
      
       if((xx==RP) && (yy==CP))
          {point();
-         Serial.println("print is called:2");
          }
               
     
