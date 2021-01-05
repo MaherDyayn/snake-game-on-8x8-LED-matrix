@@ -1,5 +1,5 @@
 int PBL=111,PBR=112,PBU=113,PBD=114, latest=0,k=0,g=0,i,g1=0,prev=0,n=0,a=2,b=1;
-int Row[8], Column[8],r=0,c=0,Size=4;
+int Row[8], Column[8],r=0,c=0,Size=1;
 int C=Size,R=0,z=0;
 int RP=7, CP=7,nn=0,xx,yy, rate;
 
@@ -12,6 +12,7 @@ void win();// shows some led pattern when the player wins
 void Display_1();// tp display position of the food for the snake
 void Display(int rr,int cc);// to display position of the snake
 void point();// calculates next position of the food of the snake using random()
+void over();// calculates when the snake eats itself
 void setup()
 {Serial.begin(9600);
  pinMode(2,OUTPUT);
@@ -185,5 +186,15 @@ void win()
   shiftOut(6,7,LSBFIRST,0x0000);
   shiftOut(6,7,LSBFIRST,0x0000>>8);
   digitalWrite(8,HIGH); 
+  }
+}
+void over()
+{
+ for(int i=0;i<Size-1;i++)
+  {
+     if(Row[Size-1]==Row[i] && Column[Size-1]==Column[i])
+       {win();
+        Size=1;
+       }
   }
 }
